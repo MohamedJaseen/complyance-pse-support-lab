@@ -1,0 +1,6 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Date: Fri, 30 Oct 2026 13:36:39 GMT
+Content-Length: 510
+
+{"results":[{"recordId":16,"documentRef":"DOC-001","normalizedLabel":"SAMPLE 001"},{"recordId":17,"documentRef":"DOC-002","normalizedLabel":"SAMPLE 002"},{"recordId":18,"documentRef":"DOC-003","normalizedLabel":"SAMPLE 003"},{"recordId":19,"documentRef":"DOC-004","normalizedLabel":"SAMPLE 004"},{"recordId":20,"documentRef":"DOC-005","normalizedLabel":"SAMPLE 005"},{"recordId":26,"documentRef":"DOC-011","normalizedLabel":"SAMPLE 011"},{"recordId":27,"documentRef":"DOC-012","normalizedLabel":"SAMPLE 012"}]}

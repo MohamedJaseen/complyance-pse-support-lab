@@ -1,0 +1,17 @@
+snapshot_execution_utc=2026-10-31T09:49:12.206701+00:00
+source_database=<repo>\.data\lab.sqlite
+mode=SQLite read-only; endpoint-equivalent persisted state; no server or writes
+
+cedar-demo/case-002
+detail={"id":"case-002","workspaceId":"cedar-demo","state":"completed","total":12,"processed":7,"pending":5}
+records={"records":[{"id":1,"documentRef":"DOC-001","label":"Sample 001","state":"processed"},{"id":2,"documentRef":"DOC-002","label":"Sample 002","state":"processed"},{"id":3,"documentRef":"DOC-003","label":"Sample 003","state":"processed"},{"id":4,"documentRef":"DOC-004","label":"Sample 004","state":"processed"},{"id":5,"documentRef":"DOC-005","label":"Sample 005","state":"processed"},{"id":6,"documentRef":"DOC-006","label":"Sample 006","state":"pending"},{"id":7,"documentRef":"DOC-007","label":"Sample 007","state":"pending"},{"id":8,"documentRef":"DOC-008","label":"Sample 008","state":"pending"},{"id":9,"documentRef":"DOC-009","label":"Sample 009","state":"pending"},{"id":10,"documentRef":"DOC-010","label":"Sample 010","state":"pending"},{"id":11,"documentRef":"DOC-011","label":"Sample 011","state":"processed"},{"id":12,"documentRef":"DOC-012","label":"Sample 012","state":"processed"}]}
+results={"results":[{"recordId":1,"documentRef":"DOC-001","normalizedLabel":"SAMPLE 001"},{"recordId":2,"documentRef":"DOC-002","normalizedLabel":"SAMPLE 002"},{"recordId":3,"documentRef":"DOC-003","normalizedLabel":"SAMPLE 003"},{"recordId":4,"documentRef":"DOC-004","normalizedLabel":"SAMPLE 004"},{"recordId":5,"documentRef":"DOC-005","normalizedLabel":"SAMPLE 005"},{"recordId":11,"documentRef":"DOC-011","normalizedLabel":"SAMPLE 011"},{"recordId":12,"documentRef":"DOC-012","normalizedLabel":"SAMPLE 012"}]}
+events={"events":[{"id":1,"type":"import_created","details":{"total":12,"state":"queued"}},{"id":3,"type":"processing_started","details":{}},{"id":4,"type":"batch_processed","details":{"recordIds":[1,2,3,4,5],"count":5}},{"id":5,"type":"batch_processed","details":{"recordIds":[11,12],"count":2}},{"id":6,"type":"processing_completed","details":{}}]}
+existing_result_recordIds=[1,2,3,4,5,11,12]
+existing_result_documentRefs=["DOC-001","DOC-002","DOC-003","DOC-004","DOC-005","DOC-011","DOC-012"]
+
+maple-demo/control-002
+detail={"id":"control-002","workspaceId":"maple-demo","state":"paused","total":3,"processed":0,"pending":3}
+records={"records":[{"id":13,"documentRef":"CTRL-001","label":"Control 001","state":"pending"},{"id":14,"documentRef":"CTRL-002","label":"Control 002","state":"pending"},{"id":15,"documentRef":"CTRL-003","label":"Control 003","state":"pending"}]}
+results={"results":[]}
+events={"events":[{"id":2,"type":"import_created","details":{"total":3,"state":"paused"}}]}

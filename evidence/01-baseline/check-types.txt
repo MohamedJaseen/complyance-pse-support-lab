@@ -1,0 +1,7 @@
+bun : $ tsc --noEmit
+At line:2 char:222
++ ... t'; Push-Location $starter; try { bun run check-types *> $out; $code  ...
++                                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ($ tsc --noEmit:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 

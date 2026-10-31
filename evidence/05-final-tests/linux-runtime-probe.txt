@@ -1,0 +1,7 @@
+Execution timestamp (local): 2026-10-31T15:28:23.3672076+05:30
+Command: wsl.exe -d docker-desktop -- sh -lc 'uname -s; command -v bun; command -v node'
+Exit code: 127
+--- stdout ---
+Linux
+
+--- stderr ---

@@ -1,0 +1,9 @@
+bun : $ bun src/server.ts
+At line:2 char:217
++ ... line\server-start.txt'; Push-Location $starter; bun run start *> $log
++                                                     ~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ($ bun src/server.ts:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Support lab listening http://127.0.0.1:4328
+error: script "start" exited with code 255

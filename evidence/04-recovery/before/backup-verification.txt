@@ -1,0 +1,7 @@
+source=<repo>\.data\lab.sqlite
+backup=<repo>\evidence\04-recovery\before\lab.sqlite.backup
+backup_bytes=65536
+integrity_check=ok
+cedar_source_rows=12
+cedar_result_rows=7
+maple_control_rows=3

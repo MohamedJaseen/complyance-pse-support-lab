@@ -1,0 +1,7 @@
+EXECUTION_TIMESTAMP_LOCAL=2026-10-31T15:21:49.8095260+05:30
+WORKING_DIRECTORY=<repo>
+COMMAND=bun run resume-case
+EXIT_CODE=0
+
+$ bun scripts/resume-case.ts
+{"id":"case-002","workspaceId":"cedar-demo","state":"queued","pending":5}

@@ -1,0 +1,16 @@
+Execution timestamp (local): 2026-10-31T16:10:16.2088347+05:30
+Command: bun install --frozen-lockfile
+Working directory: starter/
+Exit code: 0
+--- stdout ---
+bun install v1.4.4 (38afee6c8)
+
++ @types/bun@1.4.4
++ @types/node@22.20.5
++ typescript@5.9.3
++ vitest@3.2.7
++ csv-parse@5.6.0
+
+60 packages installed [1477.00ms]
+
+--- stderr ---

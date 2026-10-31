@@ -1,0 +1,101 @@
+硅捥瑵潩⁮楴敭瑳浡⁰氨捯污㨩㈠㈰ⴶ〱㌭吰㤱〺㨹㘳㔮㌹㔸㘰〫㨵〳਍--- bun run test ---
+bun : $ vitest run
+At line:2 char:440
++ ... t ---' | Tee-Object -FilePath $out -Append; bun run test 2>&1 | Tee-O ...
++                                                 ~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ($ vitest run:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+ RUN  v3.2.7 <repo>
+
+ ❯ tests/http.test.ts (25 tests | 1 failed) 1217ms
+   ✓ local training API > health is public and reports actual training configuration 37ms
+   ✓ local training API > quoted CSV, BOM and CRLF produce genuine normalized results and atomic batch events 66ms
+   ✓ local training API > processes 1 records with exact IDs and bounded batches 123ms
+   ✓ local training API > processes 5 records with exact IDs and bounded batches 110ms
+   ✓ local training API > each POST creates a distinct import even for repeated CSV 130ms
+   ✓ local training API > rejects empty file with a structured client error 15ms
+   ✓ local training API > rejects header only with a structured client error 3ms
+   ✓ local training API > rejects wrong header with a structured client error 14ms
+   ✓ local training API > rejects extra header with a structured client error 13ms
+   ✓ local training API > rejects missing column with a structured client error 15ms
+   ✓ local training API > rejects broken quote with a structured client error 7ms
+   ✓ local training API > rejects duplicate references with a structured client error 3ms
+   ✓ local training API > rejects empty reference with a structured client error 3ms
+   ✓ local training API > rejects non-ASCII reference with a structured client error 3ms
+   ✓ local training API > rejects reference punctuation with a structured client error 15ms
+   ✓ local training API > rejects long reference with a structured client error 16ms
+   ✓ local training API > rejects blank label with a structured client error 16ms
+   ✓ local training API > rejects long label with a structured client error 15ms
+   ✓ local training API > rejects too many rows with a structured client error 16ms
+   ✓ local training API > requires a valid synthetic workspace selector and CSV media type 48ms
+   ✓ local training API > unknown and cross-workspace imports are 404 on every resource 110ms
+   ✓ local training API > rejects oversized or invalid UTF-8 bodies with structured errors 35ms
+   ✓ local training API > keeps newly submitted imports isolated between workspaces 138ms
+   ✓ local training API > the paused control workspace is untouched by customer processing 34ms
+   × local training API > a clean restart preserves completed results, IDs, events and the paused control 76ms
+     → Bun server did not stop cleanly (SIGTERM): 
+ ❯ tests/processing-volume.test.ts (11 tests) 1266ms
+   ✓ processing volume invariants > processes the supplied 12-row volume with the default batch size of 5 70ms
+   ✓ processing volume invariants > processes 1 rows exactly once with batch size 5 74ms
+   ✓ processing volume invariants > processes 5 rows exactly once with batch size 5 18ms
+   ✓ processing volume invariants > processes 6 rows exactly once with batch size 5 84ms
+   ✓ processing volume invariants > processes 10 rows exactly once with batch size 5 40ms
+   ✓ processing volume invariants > processes 11 rows exactly once with batch size 5 59ms
+   ✓ processing volume invariants > processes 12 rows exactly once with batch size 5 80ms
+   ✓ processing volume invariants > processes 21 rows exactly once with batch size 5 65ms
+   ✓ processing volume invariants > processes 200 rows exactly once with batch size 5 136ms
+   ✓ processing volume invariants > processes 12 rows with configured batch size 3 84ms
+   ✓ processing volume invariants > processes 12 rows with configured batch size 7 44ms
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/processing-volume.test.ts [ tests/processing-volume.test.ts ]
+AggregateError: One or more processing-volume test servers did not stop cleanly
+ ❯ tests/processing-volume.test.ts:32:32
+     30|     await rm(directory, { recursive: 
+true, force: true });
+     31|   }
+     32|   if (errors.length > 0) throw new AggregateError(errors, "One or more…
+       |                                ^
+     33| });
+     34| 
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/http.test.ts > local training API > a clean restart preserves 
+completed results, IDs, events and the paused control
+Error: Bun server did not stop cleanly (SIGTERM): 
+ ❯ Object.stop tests/harness.ts:51:38
+     49|         const result = await exited.promise;
+     50|         clearTimeout(forced);
+     51|         if (result.code !== 0) throw new Error(`Bun server did not sto…
+       |                                      ^
+     52|       },
+     53|     };
+ ❯ tests/http.test.ts:189:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  2 failed (2)
+      Tests  1 failed | 35 passed (36)
+   Start at  19:09:38
+   Duration  4.00s (transform 137ms, setup 0ms, collect 201ms, tests 2.48s, environment 3ms, prepare 499ms)
+
+error: script "test" exited with code 1
+TEST_EXIT_CODE=1
+--- bun run check-types ---
+bun : $ tsc --noEmit
+At line:2 char:653
++ ... | Tee-Object -FilePath $out -Append; bun run check-types 2>&1 | Tee-O ...
++                                          ~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ($ tsc --noEmit:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+CHECK_TYPES_EXIT_CODE=0
+SUMMARY test=1 check-types=0

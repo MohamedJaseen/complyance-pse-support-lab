@@ -1,0 +1,8 @@
+POLL_UTC=2026-10-30T13:29:13.9156374Z
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Date: Fri, 30 Oct 2026 13:29:13 GMT
+Content-Length: 101
+
+{"id":"case-002","workspaceId":"cedar-demo","state":"completed","total":12,"processed":7,"pending":5}
+---

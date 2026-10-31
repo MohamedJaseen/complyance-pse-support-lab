@@ -1,0 +1,2 @@
+COMMAND: curl.exe -sS -i -H 'x-lab-workspace: cedar-demo' -H 'Content-Type: text/csv' --data-binary '@<repo>\fixtures\case-002.csv' http://127.0.0.1:52327/imports
+CURL_EXIT_CODE=0

@@ -1,0 +1,6 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Date: Fri, 30 Oct 2026 13:29:31 GMT
+Content-Length: 894
+
+{"records":[{"id":1,"documentRef":"DOC-001","label":"Sample 001","state":"processed"},{"id":2,"documentRef":"DOC-002","label":"Sample 002","state":"processed"},{"id":3,"documentRef":"DOC-003","label":"Sample 003","state":"processed"},{"id":4,"documentRef":"DOC-004","label":"Sample 004","state":"processed"},{"id":5,"documentRef":"DOC-005","label":"Sample 005","state":"processed"},{"id":6,"documentRef":"DOC-006","label":"Sample 006","state":"pending"},{"id":7,"documentRef":"DOC-007","label":"Sample 007","state":"pending"},{"id":8,"documentRef":"DOC-008","label":"Sample 008","state":"pending"},{"id":9,"documentRef":"DOC-009","label":"Sample 009","state":"pending"},{"id":10,"documentRef":"DOC-010","label":"Sample 010","state":"pending"},{"id":11,"documentRef":"DOC-011","label":"Sample 011","state":"processed"},{"id":12,"documentRef":"DOC-012","label":"Sample 012","state":"processed"}]}

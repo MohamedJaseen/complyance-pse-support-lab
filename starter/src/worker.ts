@@ -5,12 +5,10 @@ export function processImport(repository: LabRepository, workspaceId: WorkspaceI
   if (!Number.isInteger(batchSize) || batchSize < 1 || batchSize > 20) throw new Error("Batch size must be from 1 to 20");
   if (!repository.claimImport(workspaceId, importId)) return;
   try {
-    let offset = 0;
     while (true) {
-      const batch = repository.pendingBatch(workspaceId, importId, batchSize, offset);
+      const batch = repository.pendingBatch(workspaceId, importId, batchSize, 0);
       if (batch.length === 0) break;
       repository.commitBatch(workspaceId, importId, batch);
-      offset += batch.length;
     }
     repository.finishImport(workspaceId, importId);
   } catch (error) {

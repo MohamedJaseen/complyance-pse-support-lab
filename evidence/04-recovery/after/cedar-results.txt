@@ -1,0 +1,10 @@
+EXECUTION_TIMESTAMP_LOCAL=2026-10-31T15:22:19.2243955+05:30
+COMMAND=curl.exe -sS -i -H 'x-lab-workspace: cedar-demo' 'http://127.0.0.1:4328/imports/case-002/results'
+CURL_EXIT_CODE=0
+
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Date: Sat, 31 Oct 2026 09:52:18 GMT
+Content-Length: 856
+
+{"results":[{"recordId":1,"documentRef":"DOC-001","normalizedLabel":"SAMPLE 001"},{"recordId":2,"documentRef":"DOC-002","normalizedLabel":"SAMPLE 002"},{"recordId":3,"documentRef":"DOC-003","normalizedLabel":"SAMPLE 003"},{"recordId":4,"documentRef":"DOC-004","normalizedLabel":"SAMPLE 004"},{"recordId":5,"documentRef":"DOC-005","normalizedLabel":"SAMPLE 005"},{"recordId":6,"documentRef":"DOC-006","normalizedLabel":"SAMPLE 006"},{"recordId":7,"documentRef":"DOC-007","normalizedLabel":"SAMPLE 007"},{"recordId":8,"documentRef":"DOC-008","normalizedLabel":"SAMPLE 008"},{"recordId":9,"documentRef":"DOC-009","normalizedLabel":"SAMPLE 009"},{"recordId":10,"documentRef":"DOC-010","normalizedLabel":"SAMPLE 010"},{"recordId":11,"documentRef":"DOC-011","normalizedLabel":"SAMPLE 011"},{"recordId":12,"documentRef":"DOC-012","normalizedLabel":"SAMPLE 012"}]}

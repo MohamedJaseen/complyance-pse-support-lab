@@ -1,0 +1,4 @@
+source=<repo>\.data\lab.sqlite
+backup=<repo>_baseline.sqlite
+bytes=65536
+integrity_check=ok

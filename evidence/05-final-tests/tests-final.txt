@@ -1,0 +1,88 @@
+Execution timestamp (local): 2026-10-31T16:10:28.9950300+05:30
+Command: bun run test
+Working directory: starter/
+Exit code: 1
+--- stdout ---
+
+[1m[46m RUN [49m[22m [36mv3.2.7 [39m[90m<repo>/starter[39m
+
+ [31m❯[39m tests/http.test.ts [2m([22m[2m25 tests[22m[2m | [22m[31m1 failed[39m[2m)[22m[33m 1196[2mms[22m[39m
+   [32m✓[39m local training API[2m > [22mhealth is public and reports actual training configuration[32m 46[2mms[22m[39m
+   [32m✓[39m local training API[2m > [22mquoted CSV, BOM and CRLF produce genuine normalized results and atomic batch events[32m 94[2mms[22m[39m
+   [32m✓[39m local training API[2m > [22mprocesses 1 records with exact IDs and bounded batches[32m 63[2mms[22m[39m
+   [32m✓[39m local training API[2m > [22mprocesses 5 records with exact IDs and bounded batches[32m 72[2mms[22m[39m
+   [32m✓[39m local training API[2m > [22meach POST creates a distinct import even for repeated CSV[32m 144[2mms[22m[39m
+   [32m✓[39m local training API[2m > [22mrejects empty file with a structured client error[32m 4[2mms[22m[39m
+   [32m✓[39m local training API[2m > [22mrejects header only with a structured client error[32m 6[2mms[22m[39m
+   [32m✓[39m local training API[2m > [22mrejects wrong header with a structured client error[32m 6[2mms[22m[39m
+   [32m✓[39m local training API[2m > [22mrejects extra header with a structured client error[32m 5[2mms[22m[39m
+   [32m✓[39m local training API[2m > [22mrejects missing column with a structured client error[32m 14[2mms[22m[39m
+   [32m✓[39m local training API[2m > [22mrejects broken quote with a structured client error[32m 3[2mms[22m[39m
+   [32m✓[39m local training API[2m > [22mrejects duplicate references with a structured client error[32m 14[2mms[22m[39m
+   [32m✓[39m local training API[2m > [22mrejects empty reference with a structured client error[32m 15[2mms[22m[39m
+   [32m✓[39m local training API[2m > [22mrejects non-ASCII reference with a structured client error[32m 6[2mms[22m[39m
+   [32m✓[39m local training API[2m > [22mrejects reference punctuation with a structured client error[32m 10[2mms[22m[39m
+   [32m✓[39m local training API[2m > [22mrejects long reference with a structured client error[32m 17[2mms[22m[39m
+   [32m✓[39m local training API[2m > [22mrejects blank label with a structured client error[32m 4[2mms[22m[39m
+   [32m✓[39m local training API[2m > [22mrejects long label with a structured client error[32m 13[2mms[22m[39m
+   [32m✓[39m local training API[2m > [22mrejects too many rows with a structured client error[32m 19[2mms[22m[39m
+   [32m✓[39m local training API[2m > [22mrequires a valid synthetic workspace selector and CSV media type[32m 31[2mms[22m[39m
+   [32m✓[39m local training API[2m > [22munknown and cross-workspace imports are 404 on every resource[32m 98[2mms[22m[39m
+   [32m✓[39m local training API[2m > [22mrejects oversized or invalid UTF-8 bodies with structured errors[32m 12[2mms[22m[39m
+   [32m✓[39m local training API[2m > [22mkeeps newly submitted imports isolated between workspaces[32m 75[2mms[22m[39m
+   [32m✓[39m local training API[2m > [22mthe paused control workspace is untouched by customer processing[32m 18[2mms[22m[39m
+[31m   [31m×[31m local training API[2m > [22ma clean restart preserves completed results, IDs, events and the paused control[39m[32m 109[2mms[22m[39m
+[31m     → Bun server did not stop cleanly (SIGTERM): [39m
+ [31m❯[39m tests/processing-volume.test.ts [2m([22m[2m11 tests[22m[2m)[22m[33m 1571[2mms[22m[39m
+   [32m✓[39m processing volume invariants[2m > [22mprocesses the supplied 12-row volume with the default batch size of 5[32m 111[2mms[22m[39m
+   [32m✓[39m processing volume invariants[2m > [22mprocesses 1 rows exactly once with batch size 5[32m 56[2mms[22m[39m
+   [32m✓[39m processing volume invariants[2m > [22mprocesses 5 rows exactly once with batch size 5[32m 60[2mms[22m[39m
+   [32m✓[39m processing volume invariants[2m > [22mprocesses 6 rows exactly once with batch size 5[32m 34[2mms[22m[39m
+   [32m✓[39m processing volume invariants[2m > [22mprocesses 10 rows exactly once with batch size 5[32m 68[2mms[22m[39m
+   [32m✓[39m processing volume invariants[2m > [22mprocesses 11 rows exactly once with batch size 5[32m 64[2mms[22m[39m
+   [32m✓[39m processing volume invariants[2m > [22mprocesses 12 rows exactly once with batch size 5[32m 83[2mms[22m[39m
+   [32m✓[39m processing volume invariants[2m > [22mprocesses 21 rows exactly once with batch size 5[32m 54[2mms[22m[39m
+   [32m✓[39m processing volume invariants[2m > [22mprocesses 200 rows exactly once with batch size 5[32m 150[2mms[22m[39m
+   [32m✓[39m processing volume invariants[2m > [22mprocesses 12 rows with configured batch size 3[32m 106[2mms[22m[39m
+   [32m✓[39m processing volume invariants[2m > [22mprocesses 12 rows with configured batch size 7[32m 75[2mms[22m[39m
+
+[2m Test Files [22m [1m[31m2 failed[39m[22m[90m (2)[39m
+[2m      Tests [22m [1m[31m1 failed[39m[22m[2m | [22m[1m[32m35 passed[39m[22m[90m (36)[39m
+[2m   Start at [22m 16:10:30
+[2m   Duration [22m 5.15s[2m (transform 194ms, setup 0ms, collect 292ms, tests 2.77s, environment 1ms, prepare 774ms)[22m
+
+
+--- stderr ---
+$ vitest run
+
+[31m⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Suites 1 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
+
+[41m[1m FAIL [22m[49m tests/processing-volume.test.ts[2m [ tests/processing-volume.test.ts ][22m
+[31m[1mAggregateError[22m: One or more processing-volume test servers did not stop cleanly[39m
+[36m [2m❯[22m tests/processing-volume.test.ts:[2m32:32[22m[39m
+    [90m 30| [39m    [35mawait[39m [34mrm[39m(directory[33m,[39m { recursive[33m:[39m [35mtrue[39m[33m,[39m force[33m:[39m [35mtrue[39m })[33m;[39m
+    [90m 31| [39m  }
+    [90m 32| [39m  if (errors.length > 0) throw new AggregateError(errors, "One or more…
+    [90m   | [39m                               [31m^[39m
+    [90m 33| [39m})[33m;[39m
+    [90m 34| [39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯[22m[39m
+
+
+[31m⎯⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Tests 1 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
+
+[41m[1m FAIL [22m[49m tests/http.test.ts[2m > [22mlocal training API[2m > [22ma clean restart preserves completed results, IDs, events and the paused control
+[31m[1mError[22m: Bun server did not stop cleanly (SIGTERM): [39m
+[36m [2m❯[22m Object.stop tests/harness.ts:[2m51:38[22m[39m
+    [90m 49| [39m        [35mconst[39m result [33m=[39m [35mawait[39m exited[33m.[39mpromise[33m;[39m
+    [90m 50| [39m        [34mclearTimeout[39m(forced)[33m;[39m
+    [90m 51| [39m        if (result.code !== 0) throw new Error(`Bun server did not sto…
+    [90m   | [39m                                     [31m^[39m
+    [90m 52| [39m      }[33m,[39m
+    [90m 53| [39m    }[33m;[39m
+[90m [2m❯[22m tests/http.test.ts:[2m189:5[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯[22m[39m
+
+error: script "test" exited with code 1

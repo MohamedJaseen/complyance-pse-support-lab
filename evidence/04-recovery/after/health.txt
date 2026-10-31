@@ -1,0 +1,10 @@
+EXECUTION_TIMESTAMP_LOCAL=2026-10-31T15:21:43.0629737+05:30
+COMMAND=curl.exe -sS -i http://127.0.0.1:4328/health
+CURL_EXIT_CODE=0
+
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Date: Sat, 31 Oct 2026 09:51:43 GMT
+Content-Length: 47
+
+{"status":"ok","mode":"training","batchSize":5}

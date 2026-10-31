@@ -1,0 +1,16 @@
+verification_execution_local=2026-10-31T15:23:52.9583517+05:30
+COMMAND=python <local-temp-file> (read-only DB comparison and saved HTTP response assertions)
+EXIT_CODE=0
+
+verification_execution_utc=2026-10-31T09:53:53.114606+00:00
+before_database=evidence\04-recovery\before\lab.sqlite.backup
+after_database=starter/.data/lab.sqlite
+PASS | a. Same import and source IDs | evidence: after/cedar-detail.txt; after/cedar-records.txt; before/database-snapshot.txt | id=case-002; sourceIds=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+PASS | b. Completion counts | evidence: after/cedar-detail.txt | HTTP=HTTP/1.1 200 OK; state=completed; total=12; processed=12; pending=0
+PASS | c. Exact 12 results and normalization | evidence: after/cedar-records.txt; after/cedar-results.txt | resultCount=12; docs=['DOC-001', 'DOC-002', 'DOC-003', 'DOC-004', 'DOC-005', 'DOC-006', 'DOC-007', 'DOC-008', 'DOC-009', 'DOC-010', 'DOC-011', 'DOC-012']; normalization_matches_records=True
+PASS | d. Original seven result identities retained | evidence: before/database-snapshot.txt; after/cedar-results.txt | beforeRecordIds=[1, 2, 3, 4, 5, 11, 12]; afterValuesMatch=True
+PASS | e. No duplicate results or batch processing IDs | evidence: after/cedar-results.txt; after/cedar-events.txt | resultIdsUnique=12/12; eventBatchIdsUnique=12/12
+PASS | f. Resume event and bounded, exact recovery batches | evidence: before/database-snapshot.txt; after/cedar-events.txt; after/resume-case-output.txt | resumeRequested=True; batchCounts=[5, 2, 5]; oldBatchesPreserved=True; previouslyPending=[6, 7, 8, 9, 10]; newBatches=[[6, 7, 8, 9, 10]]
+PASS | g. Maple unchanged and database diff | evidence: before/database-snapshot.txt; after/maple-detail.txt; after/maple-records.txt; after/maple-results.txt; after/maple-events.txt; before/lab.sqlite.backup vs starter/.data/lab.sqlite | HTTP state=paused; pending=3; recordIds=[13, 14, 15]; results=0; events=['import_created']; import/records/results/events DB tuples identical=True
+PASS | h. Cross-workspace 404 | evidence: after/cross-workspace-404.txt | HTTP=HTTP/1.1 404 Not Found
+OVERALL=PASS

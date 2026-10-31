@@ -1,0 +1,2 @@
+$ bun src/server.ts
+error: script "start" exited with code 1

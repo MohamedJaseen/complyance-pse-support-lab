@@ -1,0 +1,158 @@
+
+ RUN  v3.2.7 <repo>
+
+ ❯ tests/processing-volume.test.ts (11 tests | 9 failed) 1222ms
+   × processing volume invariants > processes the supplied 12-row volume with the default batch size of 5 80ms
+     → expected { …(6) } to deeply equal { …(6) }
+   ✓ processing volume invariants > processes 1 rows exactly once with batch size 5 89ms
+   ✓ processing volume invariants > processes 5 rows exactly once with batch size 5 76ms
+   × processing volume invariants > processes 6 rows exactly once with batch size 5 57ms
+     → expected { …(6) } to deeply equal { …(6) }
+   × processing volume invariants > processes 10 rows exactly once with batch size 5 48ms
+     → expected { …(6) } to deeply equal { …(6) }
+   × processing volume invariants > processes 11 rows exactly once with batch size 5 31ms
+     → expected { …(6) } to deeply equal { …(6) }
+   × processing volume invariants > processes 12 rows exactly once with batch size 5 79ms
+     → expected { …(6) } to deeply equal { …(6) }
+   × processing volume invariants > processes 21 rows exactly once with batch size 5 37ms
+     → expected { …(6) } to deeply equal { …(6) }
+   × processing volume invariants > processes 200 rows exactly once with batch size 5 102ms
+     → expected { …(6) } to deeply equal { …(6) }
+   × processing volume invariants > processes 12 rows with configured batch size 3 65ms
+     → expected { …(6) } to deeply equal { …(6) }
+   × processing volume invariants > processes 12 rows with configured batch size 7 62ms
+     → expected { …(6) } to deeply equal { …(6) }
+bunx : 
+At line:2 char:227
++ ... rter; try { bunx vitest run tests/processing-volume.test.ts *> $out;  ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/processing-volume.test.ts [ tests/processing-volume.test.ts ]
+AggregateError: One or more processing-volume test servers did not stop cleanly
+ ❯ tests/processing-volume.test.ts:32:32
+     30|     await rm(directory, { recursive: 
+true, force: true });
+     31|   }
+     32|   if (errors.length > 0) throw new AggregateError(errors, "One or more…
+       |                                ^
+     33| });
+     34| 
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/10]⎯
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 9 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/processing-volume.test.ts > processing volume invariants > processes 
+the supplied 12-row volume with the default batch size of 5
+AssertionError: expected { …(6) } to deeply equal { …(6) }
+
+- Expected
++ Received
+
+  {
+    "id": "5a758e56-d5fe-4d81-a4e3-0dcfcb0726b5",
+-   "pending": 0,
+-   "processed": 12,
++   "pending": 5,
++   "processed": 7,
+    "state": "completed",
+    "total": 12,
+    "workspaceId": "cedar-demo",
+  }
+
+ ❯ assertProcessing tests/processing-volume.test.ts:50:48
+     48|   const id = created.id;
+     49| 
+     50|   expect(await waitForCompletion(lab.url, 
+id)).toEqual({
+       |                                                ^
+     51|     id,
+     52|     workspaceId: "cedar-demo",
+ ❯ tests/processing-volume.test.ts:103:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/10]⎯
+
+ FAIL  tests/processing-volume.test.ts > processing volume invariants > processes 
+6 rows exactly once with batch size 5
+ FAIL  tests/processing-volume.test.ts > processing volume invariants > processes 
+10 rows exactly once with batch size 5
+ FAIL  tests/processing-volume.test.ts > processing volume invariants > processes 
+11 rows exactly once with batch size 5
+ FAIL  tests/processing-volume.test.ts > processing volume invariants > processes 
+12 rows exactly once with batch size 5
+ FAIL  tests/processing-volume.test.ts > processing volume invariants > processes 
+21 rows exactly once with batch size 5
+ FAIL  tests/processing-volume.test.ts > processing volume invariants > processes 
+200 rows exactly once with batch size 5
+AssertionError: expected { …(6) } to deeply equal { …(6) }
+
+- Expected
++ Received
+
+  {
+    "id": "8fe860f5-cd51-4861-9d73-0b2003d34aee",
+-   "pending": 0,
+-   "processed": 6,
++   "pending": 1,
++   "processed": 5,
+    "state": "completed",
+    "total": 6,
+    "workspaceId": "cedar-demo",
+  }
+
+ ❯ assertProcessing tests/processing-volume.test.ts:50:48
+     48|   const id = created.id;
+     49| 
+     50|   expect(await waitForCompletion(lab.url, 
+id)).toEqual({
+       |                                                ^
+     51|     id,
+     52|     workspaceId: "cedar-demo",
+ ❯ tests/processing-volume.test.ts:109:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/10]⎯
+
+ FAIL  tests/processing-volume.test.ts > processing volume invariants > processes 
+12 rows with configured batch size 3
+ FAIL  tests/processing-volume.test.ts > processing volume invariants > processes 
+12 rows with configured batch size 7
+AssertionError: expected { …(6) } to deeply equal { …(6) }
+
+- Expected
++ Received
+
+  {
+    "id": "8f6c46ff-3c70-44dc-a2b7-0a4c34c26742",
+-   "pending": 0,
+-   "processed": 12,
++   "pending": 6,
++   "processed": 6,
+    "state": "completed",
+    "total": 12,
+    "workspaceId": "cedar-demo",
+  }
+
+ ❯ assertProcessing tests/processing-volume.test.ts:50:48
+     48|   const id = created.id;
+     49| 
+     50|   expect(await waitForCompletion(lab.url, 
+id)).toEqual({
+       |                                                ^
+     51|     id,
+     52|     workspaceId: "cedar-demo",
+ ❯ tests/processing-volume.test.ts:118:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/10]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  9 failed | 2 passed (11)
+   Start at  19:07:38
+   Duration  3.25s (transform 110ms, setup 0ms, collect 145ms, tests 1.22s, environment 0ms, prepare 1.25s)
+
+EXIT_CODE=1

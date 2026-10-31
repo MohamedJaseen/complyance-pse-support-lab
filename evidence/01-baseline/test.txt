@@ -1,0 +1,61 @@
+bun : $ vitest run
+At line:2 char:215
++ ... test.txt'; Push-Location $starter; try { bun run test *> $out; $code  ...
++                                              ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ($ vitest run:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+ RUN  v3.2.7 <repo>
+
+ ❯ tests/http.test.ts (25 tests | 1 failed) 1545ms
+   ✓ local training API > health is public and reports actual training configuration 64ms
+   ✓ local training API > quoted CSV, BOM and CRLF produce genuine normalized results and atomic batch events 107ms
+   ✓ local training API > processes 1 records with exact IDs and bounded batches 107ms
+   ✓ local training API > processes 5 records with exact IDs and bounded batches 103ms
+   ✓ local training API > each POST creates a distinct import even for repeated CSV 142ms
+   ✓ local training API > rejects empty file with a structured client error 18ms
+   ✓ local training API > rejects header only with a structured client error 15ms
+   ✓ local training API > rejects wrong header with a structured client error 16ms
+   ✓ local training API > rejects extra header with a structured client error 18ms
+   ✓ local training API > rejects missing column with a structured client error 14ms
+   ✓ local training API > rejects broken quote with a structured client error 5ms
+   ✓ local training API > rejects duplicate references with a structured client error 8ms
+   ✓ local training API > rejects empty reference with a structured client error 15ms
+   ✓ local training API > rejects non-ASCII reference with a structured client error 6ms
+   ✓ local training API > rejects reference punctuation with a structured client error 4ms
+   ✓ local training API > rejects long reference with a structured client error 6ms
+   ✓ local training API > rejects blank label with a structured client error 8ms
+   ✓ local training API > rejects long label with a structured client error 7ms
+   ✓ local training API > rejects too many rows with a structured client error 18ms
+   ✓ local training API > requires a valid synthetic workspace selector and CSV media type 30ms
+   ✓ local training API > unknown and cross-workspace imports are 404 on every resource 114ms
+   ✓ local training API > rejects oversized or invalid UTF-8 bodies with structured errors 17ms
+   ✓ local training API > keeps newly submitted imports isolated between workspaces 121ms
+   ✓ local training API > the paused control workspace is untouched by customer processing 30ms
+   × local training API > a clean restart preserves completed results, IDs, events and the paused control 108ms
+     → Bun server did not stop cleanly (SIGTERM): 
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/http.test.ts > local training API > a clean restart preserves 
+completed results, IDs, events and the paused control
+Error: Bun server did not stop cleanly (SIGTERM): 
+ ❯ Object.stop tests/harness.ts:51:38
+     49|         const result = await exited.promise;
+     50|         clearTimeout(forced);
+     51|         if (result.code !== 0) throw new Error(`Bun server did not sto…
+       |                                      ^
+     52|       },
+     53|     };
+ ❯ tests/http.test.ts:189:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 24 passed (25)
+   Start at  18:58:39
+   Duration  3.52s (transform 406ms, setup 0ms, collect 445ms, tests 1.54s, environment 1ms, prepare 534ms)
+
+error: script "test" exited with code 1

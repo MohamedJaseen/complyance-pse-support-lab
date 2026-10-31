@@ -1,0 +1,8 @@
+Execution timestamp (local): 2026-10-31T16:10:28.6246189+05:30
+Command: bun run check-types
+Working directory: starter/
+Exit code: 0
+--- stdout ---
+
+--- stderr ---
+$ tsc --noEmit

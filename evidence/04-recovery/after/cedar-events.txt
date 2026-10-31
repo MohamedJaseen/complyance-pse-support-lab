@@ -1,0 +1,10 @@
+EXECUTION_TIMESTAMP_LOCAL=2026-10-31T15:22:19.3380144+05:30
+COMMAND=curl.exe -sS -i -H 'x-lab-workspace: cedar-demo' 'http://127.0.0.1:4328/imports/case-002/events'
+CURL_EXIT_CODE=0
+
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Date: Sat, 31 Oct 2026 09:52:18 GMT
+Content-Length: 586
+
+{"events":[{"id":1,"type":"import_created","details":{"total":12,"state":"queued"}},{"id":3,"type":"processing_started","details":{}},{"id":4,"type":"batch_processed","details":{"recordIds":[1,2,3,4,5],"count":5}},{"id":5,"type":"batch_processed","details":{"recordIds":[11,12],"count":2}},{"id":6,"type":"processing_completed","details":{}},{"id":7,"type":"resume_requested","details":{"pending":5}},{"id":8,"type":"processing_started","details":{}},{"id":9,"type":"batch_processed","details":{"recordIds":[6,7,8,9,10],"count":5}},{"id":10,"type":"processing_completed","details":{}}]}

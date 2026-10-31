@@ -1,0 +1,10 @@
+EXECUTION_TIMESTAMP_LOCAL=2026-10-31T15:22:18.9936590+05:30
+COMMAND=curl.exe -sS -i -H 'x-lab-workspace: cedar-demo' 'http://127.0.0.1:4328/imports/case-002'
+CURL_EXIT_CODE=0
+
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Date: Sat, 31 Oct 2026 09:52:18 GMT
+Content-Length: 102
+
+{"id":"case-002","workspaceId":"cedar-demo","state":"completed","total":12,"processed":12,"pending":0}
