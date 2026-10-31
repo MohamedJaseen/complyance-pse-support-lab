@@ -2,3 +2,8 @@ node_modules/
 .data/
 coverage/
 *.tsbuildinfo
+*.sqlite
+*.sqlite-*
+*.backup
+*.log
+.env
